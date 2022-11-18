@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    // font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@300;400;500;600&display=swap');
+
+@import './lib/reset.scss';
+
+html{
+    scroll-behavior: smooth
+}
+.p-20{
+    padding: 0 20px;
+}
+.asider{
+    padding: 20px;
+}
+.el-menu {
+    height: 100vh;
+}
+.el-aside {
+    height: 100vh;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+.mt-20{
+    margin-top: 20px;
+}
+.white{
+    height: 100vh;
+    overflow:hidden;
+    background: #fafafa;
+}
+.black{
+    border-right: solid 1px #dcdfe6;
+    overflow: hidden;
+    color:white;
+    background: #c1c1c1;
+
+}
+.blacka{
+    color:white;
+    background: #b3b3b3;
+}
+.el-radio-group{
+    margin: 10px;
+}
+.black{
+    .el-table__empty-block {
+        background: #d9d8d8;
+    }
+    .el-table th.el-table__cell.is-leaf {
+        background: #a7a7a7;
+        color: white;
+    }
+    .el-table tr{
+        color: white;
+        background: #d9d8d8;
+    }
+}

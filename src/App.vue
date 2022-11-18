@@ -1,30 +1,50 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div :class="{'white common-layout':toggle,'black common-layout':!toggle}">
+    <el-container>
+    <el-aside :class="{'white ':toggle,'blacka':!toggle}" :width="`${tog?'230px':'58px'}`">      
+      <AsideSide :class="{'white ':toggle,'black':!toggle}" :toggle="toggle"/>
+    </el-aside>
+    <el-container>
+      <el-header>
+        <HeaderSide @change="(item) =>{toggle = item}"/>
+      </el-header>
+      <el-main>
+        <router-view/>
+      </el-main>
+    </el-container>
+    </el-container>
+  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import AsideSide from './components/AsideSide.vue';
+import HeaderSide from './components/HeaderSide.vue';
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+  data(){
+    return{
+      toggle:true
     }
+  },
+  components:{
+    AsideSide,
+    HeaderSide
+  },
+  computed:{
+    tog(){
+      return this.$store.getters.tog
+    }
+  },
+  mounted(){
+    this.$store.dispatch('allDirections')
+    this.$store.dispatch('allPupils')
+    this.$store.dispatch('allWorkers')
+    this.$store.dispatch('allGroups')
+    this.$store.dispatch('allSpendings')
   }
 }
+</script>
+
+<style lang="scss">
+@import '@/styles/app.scss';
 </style>
