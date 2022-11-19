@@ -26,7 +26,7 @@
         <el-table :data="allSpendings">
             <el-table-column label="summa">
                 <template #default="scope">
-                    {{scope.row.summa.toLocaleString()}} so'm
+                    {{scope.row.summa}} so'm
                 </template>
             </el-table-column>
             <el-table-column label="comment" prop="comment"/>
@@ -84,7 +84,7 @@ export default {
         }
     },
     mounted(){
-        this.$store.dispatch('active',5)
+        this.$store.dispatch('active',6)
     }
 }
 </script>

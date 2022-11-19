@@ -31,12 +31,12 @@ const payment = {
                 return paymant
             })
         },
-        delete(state,payload){
-            state.allPaymants = state.allPaymants.filter(paymant => {
-                if(paymant._id === payload) return false
-                return paymant
-            })
-        }
+        // delete(state,payload){
+        //     state.allPaymants = state.allPaymants.filter(paymant => {
+        //         if(paymant._id === payload) return false
+        //         return paymant
+        //     })
+        // }
     },
     actions:{
         allPayment(context){
@@ -70,14 +70,14 @@ const payment = {
                 }
             })
         },
-        deletePaymant(context,payload){
-            context.dispatch('deleteAxios',`paymant/delete/${payload}`)
-            .then(res =>{
-                if(res.status === 200){
-                    context.commit('delete', payload)
-                }
-            })    
-        }
+        // deletePaymant(context,payload){
+        //     context.dispatch('deleteAxios',`paymant/delete/${payload}`)
+        //     .then(res =>{
+        //         if(res.status === 200){
+        //             context.commit('delete', payload)
+        //         }
+        //     })    
+        // }
     }
 
 }

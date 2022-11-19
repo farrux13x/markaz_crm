@@ -36,6 +36,9 @@ export default {
     }
   },
   mounted(){
+    if(this.$cookies.isKey('tog')){
+      this.$store.dispatch('tog',this.$cookies.get('tog'))
+    }
     this.$store.dispatch('allDirections')
     this.$store.dispatch('allPupils')
     this.$store.dispatch('allWorkers')

@@ -14,6 +14,7 @@
     "element-plus": "^2.2.20",
     "maska": "^1.5.1",
     "vue": "^3.2.13",
+    "vue-cookies": "^1.8.2",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
   },

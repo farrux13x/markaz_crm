@@ -21,6 +21,7 @@ html{
 }
 .el-menu {
     height: 100vh;
+    background-color: #94b2eb;
 }
 .el-aside {
     height: 100vh;
@@ -34,18 +35,34 @@ html{
 .white{
     height: 100vh;
     overflow:hidden;
-    background: #fafafa;
+    background: #e8f0ff;
+    .el-menu {
+        border-right-width: 0px;
+        background-color: #94b2eb;
+        .el-menu-item:hover {
+            color:black;
+            background-color: #e8f0ff;
+        }
+        .el-menu-item {
+            color: white;
+        }
+        .is-active {
+            color:black;
+        }
+    }
 }
 .black{
-    border-right: solid 1px #dcdfe6;
+    // border-right: solid 1px #dcdfe6;
+    border-right-width: 0px;
+    background-color: #8190ac;
     overflow: hidden;
     color:white;
-    background: #c1c1c1;
-
 }
 .blacka{
     color:white;
-    background: #b3b3b3;
+    // background: #b3b3b3;
+    background-color: red;
+
 }
 .el-radio-group{
     margin: 10px;

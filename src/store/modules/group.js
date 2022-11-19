@@ -21,9 +21,7 @@ const group = {
             state.group = payload
         },
         addGroup(state,payload){
-            console.log(payload)
             state.allGroups.push(payload)
-            console.log(state.allGroups)
         },
         saveGroup(state,payload){
             state.allGroups = state.allGroups.map(group =>{

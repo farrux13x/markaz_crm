@@ -61,7 +61,6 @@
             </template>
             </el-table-column>
         </el-table>
-        {{allGroups}}
     </div>
 </template>
 
@@ -102,7 +101,7 @@ export default {
         },
         handleDelete(id){
             this.$store.dispatch('deleteDirection', id)
-            this.allDirections.forEach(element => {
+            this.allGroups.forEach(element => {
                 if(element.direction._id == id){
                     this.$store.dispatch('deleteGroup', element._id)
                 }
@@ -130,7 +129,7 @@ export default {
         }
     },
     mounted(){
-        this.$store.dispatch('active',2)
+        this.$store.dispatch('active',3)
     }
 }
 </script>

@@ -106,7 +106,7 @@ export default{
         }
     },
     mounted(){
-        this.$store.dispatch('active',6)
+        this.$store.dispatch('active',7)
     }
 }
 </script>

@@ -4,7 +4,7 @@
 <script>
 export default{
     mounted(){
-        this.$store.dispatch('active',8)
+        this.$store.dispatch('active',9)
     }
 }
 </script>

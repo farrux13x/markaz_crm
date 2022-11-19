@@ -97,6 +97,9 @@ export default{
         },
         allGroups(){
             return this.$store.getters.allGroups
+        },
+        allPupils(){
+            return this.$store.getters.allPupils
         }
     },
     methods:{
@@ -117,6 +120,11 @@ export default{
         },
         handleDelete(id){
             this.$store.dispatch('deleteGroup',id)
+            this.allPupils.forEach(element => {
+                if(element.group._id == id){
+                    this.$store.dispatch('deletePupil', element._id)
+                }
+            });
         },
         handleEdit(id){
             this.toggleBtn = false
@@ -131,7 +139,7 @@ export default{
         }
     },
     mounted(){
-        this.$store.dispatch('active',3)
+        this.$store.dispatch('active',4)
     }
 
 }
