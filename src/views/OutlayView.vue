@@ -9,13 +9,13 @@
         </el-row>
         <el-dialog v-model="toggle" width="500px">
             <el-form :model="spending">
-                <el-form-item label="Chiqim qiymati">
-                    <el-input-number v-model="spending.summa" />
+                <el-form-item label="Chiqim qiymati:">
+                    <el-input-number :step="100000" controls-position="right" v-model="spending.summa" />
                 </el-form-item>
-                <el-form-item label="Izoh">
-                            <el-input :rows="2"             v-model="spending.comment"
+                <el-form-item label="Izoh:">
+                            <el-input :rows="2" v-model="spending.comment"
                             type="textarea"
-                            placeholder="Please input"/>
+                            placeholder="nimadir"/>
                 </el-form-item>
                 <el-form-item>
                     <el-button v-show="toggleBtn" type="primary" @click="add">Create</el-button>
@@ -24,12 +24,12 @@
             </el-form>
         </el-dialog>
         <el-table :data="allSpendings">
-            <el-table-column label="summa">
+            <el-table-column label="Chiqim summasi">
                 <template #default="scope">
                     {{scope.row.summa}} so'm
                 </template>
             </el-table-column>
-            <el-table-column label="comment" prop="comment"/>
+            <el-table-column label="Izoh" prop="comment"/>
             <el-table-column align="right">
                 <template #default="scope">
                     <el-button size="small" @click="handleEdit(scope.row._id)">Edit</el-button>

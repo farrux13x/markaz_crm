@@ -9,10 +9,10 @@
         </el-row>
         <el-dialog v-model="toggle" width="500px" title="Guruh">
             <el-form :model="group">
-                <el-form-item label="Guruh nomi">
+                <el-form-item label="Guruh nomi:">
                     <el-input v-model="group.title" />
                 </el-form-item>
-                <el-form-item label="Gurh yo'nalishi">
+                <el-form-item label="Guruh yo'nalishi:">
                     <el-select v-model="group.direction" placeholder="Select">
                         <el-option v-for="item of directiona" 
                         :key="item._id"
@@ -20,7 +20,7 @@
                         :value="item._id"/>
                     </el-select>
                 </el-form-item>
-                <el-form-item label="Guruh xodimi">
+                <el-form-item label="Guruh xodimi:">
                     <el-select v-model="group.worker" placeholder="Select">
                         <el-option v-for="item of allWorkers"
                         :key="item._id"
@@ -28,8 +28,8 @@
                         :value="item._id"/>
                     </el-select>
                 </el-form-item>
-                <el-form-item>
-                    <el-input-number v-model="group.price"/>
+                <el-form-item label="Guruh narhi:">
+                    <el-input-number :step="100000" controls-position="right" v-model="group.price"/>
                 </el-form-item>
                 <el-form-item>
                     <el-button v-show="toggleBtn" @click="add" type="primary">Saqlash</el-button>
@@ -39,17 +39,17 @@
         </el-dialog>
         
         <el-table :data="allGroups">
-            <el-table-column label="nomi" prop="title"/>
-            <el-table-column label="narxi" prop="price">
+            <el-table-column label="Guruh nomi" prop="title"/>
+            <el-table-column label="Guruh yo'nalishi" prop="direction.title" />
+            <el-table-column label="Guruh ustozi" prop="worker.name" />
+            <el-table-column label="Guruh narxi" prop="price">
                 <template #default="scope">
                     {{scope.row.price.toLocaleString()}} so'm
                 </template>
             </el-table-column>
-            <el-table-column label="yo'nalish" prop="direction.title" />
-            <el-table-column label="ustoz" prop="worker.name" />
             <el-table-column align="right">
             <template #header>
-                <el-input v-model="search" size="small" placeholder="Type to search" />
+                <el-input v-model="search" size="small" placeholder="Qidiruv" />
             </template>
             <template #default="scope">
                 <el-button size="small" @click="handleEdit(scope.row._id)"

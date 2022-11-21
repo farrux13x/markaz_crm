@@ -14,13 +14,13 @@
         </el-row>
         <el-dialog v-model="toggle" width="600px" title="Xodimlar">
             <el-form :model="worker">
-                <el-form-item label="Xodim ismi">
+                <el-form-item label="Xodim ismi:">
                     <el-input v-model="worker.name"/>
                 </el-form-item>
-                <el-form-item label="Xodim tel raqami">
+                <el-form-item label="Xodim tel raqami:">
                     <el-input v-maska="`+### (##) ###-##-##`" v-model="worker.phone"/>
                 </el-form-item>
-                <el-form-item label="Xodim lavozimi">
+                <el-form-item label="Xodim lavozimi:">
                     <el-select v-model="worker.who" placeholder="Select">
                         <el-option
                             v-for="item,index of who"
@@ -30,8 +30,8 @@
                             controls-position="right"/>
                     </el-select>
                 </el-form-item>
-                <el-form-item label="Xodim oyligi">
-                    <el-input-number :precision="2" :step="100000" :max="10000000" v-model="worker.salary" controls-position="right"></el-input-number>
+                <el-form-item label="Xodim oyligi:">
+                    <el-input-number :step="100000"  v-model="worker.salary" controls-position="right"></el-input-number>
                 </el-form-item>
                 <el-form-item>
                     <el-button type="primary" v-show="toggleBtn"
@@ -45,7 +45,7 @@
         <el-table :data="allWorkers">
             <el-table-column label="Xodim ismi" prop="name" />
             <el-table-column label="Xodim tel raqami" prop="phone" />
-            <el-table-column label="narxi" prop="salary">
+            <el-table-column label="Xodim oyligi" prop="salary">
                 <template #default="scope">
                     {{scope.row.salary.toLocaleString()}} so'm
                 </template>

@@ -7,14 +7,13 @@
         :class="{'white el-menu-vertical-demo':toggle,'aa el-menu-vertical-demo':!toggle}"
         >
             <el-radio-group v-model="isCollapse" size="small" border="true" style="margin-bottom: 20px">
-                <el-radio-button v-show="tog" @click="toga=false" :label="true"><el-icon size="16px"><ArrowLeft /></el-icon></el-radio-button>
-                <el-radio-button  v-show="!tog" @click="toga=true" :label="false"><el-icon size="16px"><ArrowRight/></el-icon></el-radio-button>
+                <el-radio-button v-show="tog" @click="toga(false)" :label="true"><el-icon size="16px"><ArrowLeft /></el-icon></el-radio-button>
+                <el-radio-button  v-show="!tog" @click="toga(true)" :label="false"><el-icon size="16px"><ArrowRight/></el-icon></el-radio-button>
             </el-radio-group>
             <el-menu-item index="1" @click="$router.push('/')">
                 <el-icon><House /></el-icon>
                 <span>Home</span>
             </el-menu-item>
-            {{tog}}
             <el-menu-item index="2" @click="$router.push('/workers')">
                 <el-icon color="white"><SuitcaseLine /></el-icon>
                 <span>xodimlar bo'limi</span>
@@ -55,7 +54,7 @@ export default{
     props:['toggle'],
     data(){
         return{
-            toga:'',
+            // toga:'',
             isCollapse:false
         }
     },
@@ -67,7 +66,7 @@ export default{
             return this.$store.getters.tog
         }
     },
-    watch:{
+    methods:{
         toga(value){
             this.$cookies.set('tog',value)
             setTimeout(()=>{this.$store.dispatch('tog',value)}, 250);
@@ -75,15 +74,8 @@ export default{
     },
     mounted(){
         if(this.$cookies.isKey('tog')){
-            console.log(this.$cookies.get('tog'))
             this.$store.dispatch('tog',this.$cookies.get('tog'))
         }
-        // this.$store.dispatch('tog')
-        // if(this.$cookies.isKey('tog')){
-            // console.log(this.$cookies.get('tog'))
-            // this.tog = this.$cookies.get('tog')
-            // console.log(this.tog)
-        // }
     }
 }
 </script>
@@ -93,20 +85,14 @@ export default{
 }
 .el-menu-vertical-demo.aa{
     border-right-width: 0px;
-    // border-right: solid 2px red;
-    // background: red;
     background-color: #677da5;
     .el-menu-item {
         color: white;
     }
     .el-menu-item:hover {
             color:black;
-            // background-color: #677da5;
-            // background-color: #e8f0ff;
             background-color: #8190ac;
         }
 }
-// .el-menu-item{
-//     color:red;
-// }
+
 </style>

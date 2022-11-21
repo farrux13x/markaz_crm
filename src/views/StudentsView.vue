@@ -9,13 +9,13 @@
         </el-row>
         <el-dialog v-model="toggle" width="500px" title="O'quchilar">
             <el-form :model="pupil">
-                <el-form-item label="O'quvchi ismi">
+                <el-form-item label="O'quvchi ismi:">
                     <el-input v-model="pupil.name"/>
             </el-form-item>
-            <el-form-item label="O'quvchi tel raqami">
-                <el-input v-model="pupil.phone"/>
+            <el-form-item label="O'quvchi tel raqami:">
+                <el-input v-maska="`+### (##) ###-##-##`" v-model="pupil.phone"/>
             </el-form-item>
-            <el-form-item label="O'quvchi guruhi">
+            <el-form-item label="O'quvchi guruhi:">
                     <el-select v-model="pupil.group" placeholder="Select">
                         <el-option v-for="item of allGroups"
                         :key="item._id"
@@ -30,9 +30,9 @@
             </el-form>
         </el-dialog>
         <el-table :data="allPupils">
-            <el-table-column label="ismi" prop="name" />
-            <el-table-column label="tel raqami" prop="phone" />
-            <el-table-column label="Guruhi" prop="group.title" />
+            <el-table-column label="O'quvchi ismi" prop="name" />
+            <el-table-column label="O'quvchi tel raqami" prop="phone" />
+            <el-table-column label="O'quvchi guruhi" prop="group.title" />
                 <!-- <template #default="scope">
                     <div v-for="item of allGroups" :key="item._id">
                         {{scope.row.group == item._id?item.title:scope.row.group.title}}
@@ -64,7 +64,7 @@ export default{
             search:'',
             pupil:{
                 name:'',
-                phone:'',
+                phone:'+998 ',
                 group:''
             }
         }

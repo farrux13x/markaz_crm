@@ -13,10 +13,10 @@
         <el-dialog v-model="toggle" width="500px" 
             title="Yonalishlar">
             <el-form :model="form" >
-                <el-form-item   prop="form.title" label="Yo'nalish nomi">
+                <el-form-item   prop="form.title" label="Yo'nalish nomi:">
                     <el-input v-model="form.title" />
                 </el-form-item>
-                <el-form-item label="Yo'nalish holati">
+                <el-form-item label="Yo'nalish holati:">
                     <el-switch active-value="1" inactive-value="0" v-model="form.status" />
                 </el-form-item>
                 <el-form-item>
@@ -26,25 +26,25 @@
             </el-form>
         </el-dialog>
         <el-table :data="allDirections">
-            <el-table-column label="nomi" prop="title" />
-            <el-table-column label="vaqti" prop="createdAt">
+            <el-table-column label="Yonalish nomi" prop="title" />
+            <el-table-column label="Yonalish vaqti" prop="createdAt">
                 <template #default="scope">
                     {{format(scope.row.createdAt)}}
                 </template>
             </el-table-column>
-            <el-table-column label="o'zgargan vaqti" prop="updatedAt">
+            <el-table-column label="Yonalish o'zgargan vaqti" prop="updatedAt">
                 <template #default="scope">
                     {{format(scope.row.updatedAt)}}
                 </template>
             </el-table-column>
-            <el-table-column label="holati" prop="status" >
+            <el-table-column label="Yonalish holati" prop="status" >
                 <template #default="scope">
                     {{scope.row.status == 1 ? 'Faol' :'Nofaol'}}
                 </template>
             </el-table-column>
             <el-table-column align="right">
             <template #header>
-                <el-input v-model="search" size="small" placeholder="Type to search" />
+                <el-input v-model="search" size="small" placeholder="Qidiruv" />
             </template>
             <template #default="scope">
                 <el-button size="small" @click="handleEdit(scope.row._id)"

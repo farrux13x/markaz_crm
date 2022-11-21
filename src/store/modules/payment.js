@@ -1,4 +1,3 @@
-import axios from "axios"
 
 const payment = {
     state:()=>({
@@ -48,13 +47,14 @@ const payment = {
             })
         },
         createPayment(context,payload){
-                axios.post(`http://localhost:5070/payment/create`,payload)
-                .then(res =>{
-                if(res.status === 200){
-                    console.log(res.data)
-                    console.log(payload)
-                    context.commit('addPayment', res.data)
-                }
+            context.dispatch('postAxios',{
+                url:'payment/create',
+                data:payload
+            })
+            .then(res =>{
+            if(res.status === 200){
+                context.commit('addPayment', res.data)
+            }
             })
         },
         editPaymant(context,payload){
