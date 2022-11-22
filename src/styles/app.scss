@@ -54,10 +54,10 @@ html{
     }
 }
 .black{
+    background-color: #262a3d;
     border-right-width: 0px;
-    background-color: #a7b3c9;
     overflow: hidden;
-    color:white;
+    color: #ADB3CC;
 }
 .blacka{
     color:white;
@@ -68,10 +68,10 @@ html{
     margin: 10px;
 }
 .el-menu-vertical-demo.aa .el-menu-item.is-active {
-    color:white;
+    color: #42BBFF;
 }
 .el-menu-vertical-demo.aa .el-menu-item {
-    color:black;
+    color: #ADB3CC;
 }
 .black{
     .el-table__empty-block {
@@ -87,5 +87,17 @@ html{
     .el-table tr{
         color: white;
         background: #aebbcc;
+    }
+}
+.el-header{
+    .sunny.el-button{
+        border-color: #ADB3CC;
+        color: #ADB3CC;
+        background-color: #262a3d;
+    }
+    .sunny.el-button:hover{
+        color: #42BBFF;
+        border-color: #42BBFF;
+        background: #171B2D;
     }
 }

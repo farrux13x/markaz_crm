@@ -2,34 +2,37 @@
 <div>
     <el-row :gutter="12">
         <el-col :span="8">
-            <el-card shadow="always" style="background:#409EFF">
-                <div class="demo-progress">
-                    <el-progress type="circle" :percentage="`${(allWorkers.length*100)/20}`"/>
-                </div> 
-                {{allWorkers.length}}/20
+            <el-card class="demo-progress" shadow="always" style="background:#409EFF">
+                <el-progress type="circle" :percentage="(allWorkers.length*100)/20"/>
                 <div>Xodimlar</div>
             </el-card>
         </el-col>
-        <el-col :span="8">
-            <el-card shadow="always" style="background: #eebe77">
+        <!-- <el-col :span="8">
+            <el-card class="demo-progress" shadow="always" style="background: #eebe77">
                 <div>Yo'nalish</div>
-                <div>{{allDirections.length}}</div>    
+                {{allDirections.length}}/20
+                <el-progress type="circle" :percentage="`${(allDirections.length*100)/20}`"/>
             </el-card>
         </el-col>
         <el-col :span="8" class="mb-12">
-            <el-card shadow="always" style="background: #f89898">
+            <el-card shadow="always" class="demo-progress" style="background: #f89898">
                 <div>Guruh</div>
-                <div>{{allGroups.length}}</div>    
+                <el-progress type="circle" :percentage="`${(allGroups.length*100)/20}`"/>
             </el-card>
         </el-col>
         <el-col :span="8">
-            <el-card shadow="always" style="background: #95d475">
+            <el-card shadow="always" class="demo-progress" style="background: #95d475">
                 <div>O'quvchilar</div>
-                <div>{{allPupils.length}}</div>
+                <el-progress type="circle" :percentage="`${(allPupils.length*100)/20}`"/>
             </el-card>
-        </el-col>
+        </el-col> -->
         <el-col :span="8">
-            <el-card shadow="always">Chiqimlar{{allSpendings.length}}</el-card>
+            <el-card shadow="always">
+                <div>Chiqimlar</div>
+                <div class="demo-progress">
+                    <el-progress type="circle" :percentage="(allSpendings.length*100)/20"/>
+                </div>
+            </el-card>
         </el-col>
         <el-col :span="8" class="mb-12">
             <el-card shadow="always">Kassa</el-card>

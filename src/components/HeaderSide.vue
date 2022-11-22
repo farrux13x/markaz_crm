@@ -1,10 +1,13 @@
 <template style="background:red">
     <el-row class="mt-20" justify="space-between" >
-        <h1>Welcome</h1>
-        <el-button @click="change" v-show="toggle">
+        <div>
+            <h1>Welcome</h1>
+            {{time()}}
+        </div>
+        <el-button class="moon" @click="change" v-show="toggle">
             <el-icon><Moon /></el-icon>
         </el-button>
-        <el-button @click="change" v-show="!toggle">
+        <el-button class="sunny" @click="change" v-show="!toggle">
             <el-icon><Sunny /></el-icon>
         </el-button>
     </el-row>
@@ -13,6 +16,7 @@
 export default{
     data(){
         return{
+            a:'',
             toggle:true,
             color:'#fafafa',
             isCollapse:true
@@ -22,10 +26,11 @@ export default{
         change(){
             this.toggle=!this.toggle
             this.$emit('change',this.toggle)
+        },
+        time(){
+            let day = new Date()
+            return `${day.getDate()}.${day.getFullYear()}.${day.getMonth()+1}`
         }
-    }
+    },
 }
 </script>
-<style lang="scss">
-
-</style>
