@@ -1,7 +1,6 @@
 <template style="background:red">
     <el-row class="mt-20" justify="space-between" >
         <div>
-            <h1>Welcome</h1>
             {{time()}}
         </div>
         <el-button class="moon" @click="change" v-show="toggle">
@@ -19,7 +18,8 @@ export default{
             a:'',
             toggle:true,
             color:'#fafafa',
-            isCollapse:true
+            isCollapse:true,
+            month:['Yanvar','Fevral','Mart','Aprel','May','Iyun','Iyul','Avgust','Sentabr','Oktabr','Noyabr','Dekabr']
         }
     },
     methods:{
@@ -29,7 +29,7 @@ export default{
         },
         time(){
             let day = new Date()
-            return `${day.getDate()}.${day.getFullYear()}.${day.getMonth()+1}`
+            return `${day.getDate()} ${this.month[day.getMonth()]} ${day.getFullYear()}`
         }
     },
 }

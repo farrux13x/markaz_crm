@@ -2,7 +2,7 @@
     <div>
         <el-row justify="space-between" class="mb-20">
             <h1>O'quvchilar</h1>
-            <el-button type="primary" @click="toggle=!toggle ,toggleBtn = true">
+            <el-button type="primary" @click="toggle=!toggle ,toggleBtn = true,pupil={phone:'+998 '}">
                 <el-icon><Plus/></el-icon>
                 Yangi o'quvchi
             </el-button>

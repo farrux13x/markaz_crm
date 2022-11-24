@@ -1,54 +1,67 @@
 <template>
 <div>
     <el-row :gutter="12">
-        <el-col :span="8">
-            <el-card class="demo-progress" shadow="always" style="background:#409EFF">
-                <el-progress type="circle" :percentage="(allWorkers.length*100)/20"/>
-                <div>Xodimlar</div>
+        <el-col :span="8" class="mb-12">
+            <el-card class="demo-progress" shadow="always" >
+                <div>Yo'nalish</div>
+                <div>{{allDirections.length}}/20</div>
+                <el-progress :percentage="(allDirections.length*100)/20"/>
             </el-card>
         </el-col>
-        <!-- <el-col :span="8">
-            <el-card class="demo-progress" shadow="always" style="background: #eebe77">
-                <div>Yo'nalish</div>
-                {{allDirections.length}}/20
-                <el-progress type="circle" :percentage="`${(allDirections.length*100)/20}`"/>
+        <el-col :span="8">
+            <el-card class="demo-progress" shadow="always" >
+                <div>Xodimlar</div>
+                <div>{{allDirections.length}}/20</div>
+                <el-progress :percentage="(allWorkers.length*100)/20"/>
+            </el-card>
+        </el-col>
+        <el-col :span="8">
+            <el-card class="demo-progress" shadow="always" >
+                <div>Guruh</div>
+                <div>{{allDirections.length}}/20</div>
+                <el-progress :percentage="(allGroups.length*100)/20"/>
+            </el-card>
+        </el-col>
+        <el-col :span="8">
+            <el-card class="demo-progress" shadow="always" >
+                <div>O'quvchilar</div>
+                <div>{{allDirections.length}}/20</div>
+                <el-progress :percentage="(allPupils.length*100)/20"/>
+            </el-card>
+        </el-col>
+        <el-col :span="8">
+            <el-card class="demo-progress" shadow="always">
+                <div>Chiqimlar</div>
+                <div>{{allSpendings.length}}/20</div>
+                <el-progress :percentage="(allSpendings.length*100)/20"/>
             </el-card>
         </el-col>
         <el-col :span="8" class="mb-12">
-            <el-card shadow="always" class="demo-progress" style="background: #f89898">
-                <div>Guruh</div>
-                <el-progress type="circle" :percentage="`${(allGroups.length*100)/20}`"/>
+            <el-card shadow="always" class="demo-progress">
+                <div>Kassa</div>
+                <div>{{allSpendings.length}}/20</div>
+                <el-progress :percentage="(allSpendings.length*100)/20"/>
             </el-card>
         </el-col>
-        <el-col :span="8">
-            <el-card shadow="always" class="demo-progress" style="background: #95d475">
-                <div>O'quvchilar</div>
-                <el-progress type="circle" :percentage="`${(allPupils.length*100)/20}`"/>
-            </el-card>
-        </el-col> -->
         <el-col :span="8">
             <el-card shadow="always">
-                <div>Chiqimlar</div>
-                <div class="demo-progress">
-                    <el-progress type="circle" :percentage="(allSpendings.length*100)/20"/>
-                </div>
+                <div>xodimlarga oylik berish</div>
+                <div>{{allSpendings.length}}/20</div>
+                <el-progress :percentage="(allSpendings.length*100)/20"/>
             </el-card>
         </el-col>
-        <el-col :span="8" class="mb-12">
-            <el-card shadow="always">Kassa</el-card>
-        </el-col>
         <el-col :span="8">
-            <el-card shadow="always">xodimlarga oylik berish</el-card>
-        </el-col>
-        <el-col :span="8">
-            <el-card shadow="always">hisobot bo'limi</el-card>
+            <el-card shadow="always">
+                <div>hisobot bo'limi</div>
+                <div>{{allSpendings.length}}/20</div>
+                <el-progress :percentage="(allSpendings.length*100)/20"/>
+            </el-card>
         </el-col>
     </el-row>
 </div>
 </template>
 
 <script>
-
 export default {
     computed:{
         allWorkers(){
