@@ -40,6 +40,7 @@ export default {
       this.$store.dispatch('tog',this.$cookies.get('tog'))
     }
     this.$store.dispatch('allDirections')
+    this.$store.dispatch('allPayment')
     this.$store.dispatch('allPupils')
     this.$store.dispatch('allWorkers')
     this.$store.dispatch('allGroups')

@@ -1,7 +1,9 @@
 const group = {
     state:() =>({
         allGroups:[{
-            direction:{title:''}
+            direction:{title:''},
+            price:0
+
         }],
         group:{}
     }),

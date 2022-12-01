@@ -23,7 +23,7 @@
                 </el-form-item>
             </el-form>
         </el-dialog>
-        <el-table :data="allSpendings">
+        <el-table :data="allSpendings" height="481">
             <el-table-column label="Chiqim summasi">
                 <template #default="scope">
                     {{scope.row.summa}} so'm

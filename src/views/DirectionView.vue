@@ -25,7 +25,7 @@
                 </el-form-item>
             </el-form>
         </el-dialog>
-        <el-table :data="allDirections">
+        <el-table :data="allDirections" height="481">
             <el-table-column label="Yonalish nomi" prop="title" />
             <el-table-column label="Yonalish vaqti" prop="createdAt">
                 <template #default="scope">
@@ -43,9 +43,6 @@
                 </template>
             </el-table-column>
             <el-table-column align="right">
-            <template #header>
-                <el-input v-model="search" size="small" placeholder="Qidiruv" />
-            </template>
             <template #default="scope">
                 <el-button size="small" @click="handleEdit(scope.row._id)"
                     >Edit
@@ -68,7 +65,6 @@
 export default {
     data(){
         return{
-            search:'',
             toggle:false,
             toggleBtn:true,
             a:{},

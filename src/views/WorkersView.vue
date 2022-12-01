@@ -42,7 +42,7 @@
                 </el-form-item>
             </el-form>
         </el-dialog>
-        <el-table :data="allWorkers">
+        <el-table :data="allWorkers" height="481">
             <el-table-column label="Xodim ismi" prop="name" />
             <el-table-column label="Xodim tel raqami" prop="phone" />
             <el-table-column label="Xodim oyligi" prop="salary">
@@ -56,9 +56,6 @@
                 </template>
             </el-table-column>
             <el-table-column align="right">
-            <template #header>
-                <el-input v-model="search" placeholder="Qidiruv"/>
-            </template>
             <template #default="scope">
                 <el-button @click="handEdit(scope.row._id)">Edit</el-button>
                 <el-button type="danger" @click="handDelete(scope.row._id)">Delete</el-button>
@@ -75,8 +72,7 @@ export default {
         return{
             toggle:false,
             toggleBtn:true,
-            search:'',
-            who:['dasturchi','marketolig'],
+            who:['dasturchi','marketolig','kopirayter','mobilogrif','dizayner','bugalter'],
             worker:{
                 name:'',
                 phone:'+998 ',

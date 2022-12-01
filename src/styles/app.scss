@@ -38,6 +38,16 @@ html{
     height: 100vh;
     overflow:hidden;
     background: #e8f0ff;
+    .el-main{
+        .el-button--primary{
+            --el-button-bg-color: #94b2eb;
+            --el-button-border-color: #94b2eb;
+            --el-button-hover-bg-color: #b1c6ee;
+            --el-button-hover-border-color: #b1c6ee;
+            --el-button-active-bg-color: #7896ce;
+            --el-button-active-border-color: #7896ce;
+        }
+    }
     .el-menu {
         border-right-width: 0px;
         background-color: #94b2eb;
@@ -73,15 +83,42 @@ html{
 .el-menu-vertical-demo.aa .el-menu-item {
     color: #ADB3CC;
 }
+
 .black{
+    .el-main{
+        .el-button--primary{
+            --el-button-bg-color: #42BBFF;
+            --el-button-border-color: #42BBFF;
+            --el-button-hover-bg-color: #b1c6ee;
+            --el-button-hover-border-color: #b1c6ee;
+            --el-button-active-bg-color: #7896ce;
+            --el-button-active-border-color: #7896ce;
+        }
+    }
+    .el-card {
+        border: 1px solid #384969;
+        background-color: #384969;
+        color: white;
+    }
+    .el-progress__text {
+        font-size: 14px;
+        color: white;
+    }
+    .el-table {
+        --el-table-bg-color: #262a3d;
+        --el-table-border-color: #262a3d;
+    }
     .el-table__empty-block {
-        background: #d9d8d8;
+        background-color: #4b6aa0;
+    }
+    .el-table__empty-text{
+        color: white;
     }
     .el-table tr:hover {
         color: #606266; 
     }
     .el-table th.el-table__cell.is-leaf {
-        background-color: #677da5;
+        background-color: #384969;
         color: white;
     }
     .el-table tr{

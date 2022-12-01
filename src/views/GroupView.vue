@@ -37,8 +37,7 @@
                 </el-form-item>
             </el-form>
         </el-dialog>
-        
-        <el-table :data="allGroups">
+        <el-table :data="allGroups" height="481">
             <el-table-column label="Guruh nomi" prop="title"/>
             <el-table-column label="Guruh yo'nalishi" prop="direction.title" />
             <el-table-column label="Guruh ustozi" prop="worker.name" />
@@ -48,9 +47,6 @@
                 </template>
             </el-table-column>
             <el-table-column align="right">
-            <template #header>
-                <el-input v-model="search" size="small" placeholder="Qidiruv" />
-            </template>
             <template #default="scope">
                 <el-button size="small" @click="handleEdit(scope.row._id)"
                     >Edit
@@ -66,6 +62,7 @@
             </template>
             </el-table-column>
         </el-table>
+        {{allGroups}}
     </div>
 </template>
 
@@ -73,7 +70,6 @@
 export default{
     data(){
         return{
-            search:"",
             toggleBtn:true,
             toggle:false,
             who:['dasturchi','marketolig'],

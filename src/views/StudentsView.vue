@@ -29,7 +29,7 @@
             </el-form-item>
             </el-form>
         </el-dialog>
-        <el-table :data="allPupils">
+        <el-table :data="allPupils" height="481">
             <el-table-column label="O'quvchi ismi" prop="name" />
             <el-table-column label="O'quvchi tel raqami" prop="phone" />
             <el-table-column label="O'quvchi guruhi" prop="group.title" />
@@ -40,9 +40,6 @@
                 </template>
             </el-table-column> -->
             <el-table-column align="right">
-                <template #header>
-                    <el-input v-model="search" placeholder="Qidiruv" />
-                </template>
                 <template #default="scope">
                     <el-button size="small" @click="handleEdit(scope.row._id)"
                     >Edit
@@ -61,7 +58,6 @@ export default{
         return{
             toggle:false,
             toggleBtn:true,
-            search:'',
             pupil:{
                 name:'',
                 phone:'+998 ',

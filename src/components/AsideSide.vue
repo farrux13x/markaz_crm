@@ -38,14 +38,14 @@
                 <el-icon><Wallet /></el-icon>
                 <span>kassa</span>
             </el-menu-item>
-            <el-menu-item index="8" @click="$router.push('/salary')">
+            <!-- <el-menu-item index="8" @click="$router.push('/salary')">
                 <el-icon><Money /></el-icon>
                 <span>xodimlarga oylik berish</span>
             </el-menu-item>
             <el-menu-item index="9" @click="$router.push('/pay')">
                 <el-icon color="white"><Memo /></el-icon>
                 <span>hisobot bo'limi</span>
-            </el-menu-item>
+            </el-menu-item> -->
         </el-menu>
     </div>
 </template>
@@ -83,6 +83,21 @@ export default{
 // .el-menu-vertical-demo.black{
 //     background: red;
 // }
+.el-radio-button .el-radio-button__inner {
+    color: white;
+    border-color: #94b2eb;
+    background: #94b2eb;
+}
+.el-radio-group{
+    .el-radio-button:first-child .el-radio-button__inner {
+    border-left: none;
+}
+}
+.el-radio-button:hover .el-radio-button__inner {
+    color: rgb(92, 92, 92);
+    border-color: #e8f0ff;
+    background-color: #e8f0ff;
+}
 .el-menu-vertical-demo.aa{
     border-right-width: 0px;
     background-color: #171B2D;
@@ -94,7 +109,6 @@ export default{
         margin-left:14px;
     }
     .el-radio-button .el-radio-button__inner {
-        color: #ADB3CC;
         color: #42BBFF;
         border-color: #171B2D;
         background: #171B2D;
